@@ -159,7 +159,9 @@ def map_fuel_type_consumption(navfleet_data):
             navfleet_data[col] = 0.0  # Initialize as float
         else:
             navfleet_data[col] = navfleet_data[col].astype(float)
-
+#-----------------------------------#
+# Fuel Type 1
+#-----------------------------------#   
     # Map Fuel Type 1 to ME_Consumption_* columns
     if 'Fuel Type 1' in navfleet_data and 'Fuel Type 1 ME (MT)' in navfleet_data:
         navfleet_data['Fuel Type 1'] = navfleet_data['Fuel Type 1'].astype(str).fillna("")
@@ -180,20 +182,52 @@ def map_fuel_type_consumption(navfleet_data):
         for fuel_type, target_col in fuel_type_to_Boiler_column.items():
             mask = navfleet_data['Fuel Type 1'].str.strip().str.lower() == fuel_type
             navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 1 Aux. Boiler (MT)'].fillna(0)
+#-----------------------------------#
+# Fuel Type 2
+#-----------------------------------#    
+    # Map Fuel Type 2 to ME_Consumption_* columns
+    if 'Fuel Type 2' in navfleet_data and 'Fuel Type 2 ME (MT)' in navfleet_data:
+        navfleet_data['Fuel Type 2'] = navfleet_data['Fuel Type 2'].astype(str).fillna("")
+        for fuel_type, target_col in fuel_type_to_ME_column.items():
+            mask = navfleet_data['Fuel Type 2'].str.strip().str.lower() == fuel_type
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 2 ME (MT)'].fillna(0)
 
     # Map Fuel Type 2 to AE_Consumption_* columns
-    if 'Fuel Type 2' in navfleet_data and 'Fuel Type 2 Total (MT)' in navfleet_data:
+    if 'Fuel Type 2' in navfleet_data and 'Fuel Type 2 AE (MT)' in navfleet_data:
         navfleet_data['Fuel Type 2'] = navfleet_data['Fuel Type 2'].astype(str).fillna("")
         for fuel_type, target_col in fuel_type_to_AE_column.items():
             mask = navfleet_data['Fuel Type 2'].str.strip().str.lower() == fuel_type
-            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 2 Total (MT)'].fillna(0)
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 2 AE (MT)'].fillna(0)
 
-    # Map Fuel Type 3 to Boiler_Consumption_* columns
-    if 'Fuel Type 3' in navfleet_data and 'Fuel Type 3 Total (MT)' in navfleet_data:
+    # Map Fuel Type 2 to Boiler_Consumption_* columns
+    if 'Fuel Type 2' in navfleet_data and 'Fuel Type 2 Aux. Boiler (MT)' in navfleet_data:
+        navfleet_data['Fuel Type 2'] = navfleet_data['Fuel Type 2'].astype(str).fillna("")
+        for fuel_type, target_col in fuel_type_to_AE_column.items():
+            mask = navfleet_data['Fuel Type 2'].str.strip().str.lower() == fuel_type
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 2 Aux. Boiler (MT)'].fillna(0)
+#-----------------------------------#
+# Fuel Type 3
+#-----------------------------------#   
+    # Map Fuel Type 3 to ME_Consumption_* columns
+    if 'Fuel Type 3' in navfleet_data and 'Fuel Type 3 ME (MT)' in navfleet_data:
         navfleet_data['Fuel Type 3'] = navfleet_data['Fuel Type 3'].astype(str).fillna("")
         for fuel_type, target_col in fuel_type_to_Boiler_column.items():
             mask = navfleet_data['Fuel Type 3'].str.strip().str.lower() == fuel_type
-            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 3 Total (MT)'].fillna(0)
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 3 ME (MT)'].fillna(0)
+
+    # Map Fuel Type 3 to AE_Consumption_* columns
+    if 'Fuel Type 3' in navfleet_data and 'Fuel Type 3 AE (MT)' in navfleet_data:
+        navfleet_data['Fuel Type 3'] = navfleet_data['Fuel Type 3'].astype(str).fillna("")
+        for fuel_type, target_col in fuel_type_to_Boiler_column.items():
+            mask = navfleet_data['Fuel Type 3'].str.strip().str.lower() == fuel_type
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 3 AE (MT)'].fillna(0)
+
+        # Map Fuel Type 3 to Boiler_Consumption_* columns
+    if 'Fuel Type 3' in navfleet_data and 'Fuel Type 3 Aux. Boiler (MT)' in navfleet_data:
+        navfleet_data['Fuel Type 3'] = navfleet_data['Fuel Type 3'].astype(str).fillna("")
+        for fuel_type, target_col in fuel_type_to_Boiler_column.items():
+            mask = navfleet_data['Fuel Type 3'].str.strip().str.lower() == fuel_type
+            navfleet_data.loc[mask, target_col] += navfleet_data['Fuel Type 3 Aux. Boiler (MT)'].fillna(0)
 
     return navfleet_data
 
