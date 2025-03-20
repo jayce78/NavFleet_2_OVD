@@ -112,7 +112,7 @@ def map_fuel_type_consumption(navfleet_data):
         'lslfo': 'ME_Consumption_LFO', # Treat lslfo as LFO
         'mgo': 'ME_Consumption_MGO',
         'lsmgo': 'ME_Consumption_MGO',  # Treat lsmgo as MGO
-        'ulsmgo20200': 'ME_Consumption_MGO',  # Treat ulsmgo20200 as MGO
+        'ulsmgo2020': 'ME_Consumption_MGO',  # Treat ulsmgo2020 as MGO
         'mdo': 'ME_Consumption_MDO',
         'ulsmdo2020': 'ME_Consumption_MDO', # Treat ulsmdo2020 as MDO
         'lng': 'ME_Consumption_LNG',
@@ -134,7 +134,7 @@ def map_fuel_type_consumption(navfleet_data):
         'lslfo': 'AE_Consumption_LFO', # Treat lslfo as LFO
         'mgo': 'AE_Consumption_MGO',
         'lsmgo': 'AE_Consumption_MGO',  # Treat lsmgo as MGO
-        'ulsmgo20200': 'AE_Consumption_MGO',  # Treat ulsmgo20200 as MGO
+        'ulsmgo2020': 'AE_Consumption_MGO',  # Treat ulsmgo2020 as MGO
         'mdo': 'AE_Consumption_MDO',
         'ulsmdo2020': 'AE_Consumption_MDO', # Treat ulsmdo2020 as MDO
         'lng': 'AE_Consumption_LNG',
@@ -155,7 +155,7 @@ def map_fuel_type_consumption(navfleet_data):
         'lslfo': 'Boiler_Consumption_LFO', # Treat lslfo as LFO
         'mgo': 'Boiler_Consumption_MGO',
         'lsmgo': 'Boiler_Consumption_MGO',  # Treat lsmgo as MGO
-        'ulsmgo20200': 'Boiler_Consumption_MGO',  # Treat ulsmgo20200 as MGO
+        'ulsmgo2020': 'Boiler_Consumption_MGO',  # Treat ulsmgo2020 as MGO
         'mdo': 'Boiler_Consumption_MDO',
         'ulsmdo2020': 'Boiler_Consumption_MDO', # Treat ulsmdo2020 as MDO
         'lng': 'Boiler_Consumption_LNG',
