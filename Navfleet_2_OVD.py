@@ -103,8 +103,10 @@ def map_fuel_type_consumption(navfleet_data):
     # Define mappings for ME, AE, and Boiler consumption columns
     fuel_type_to_ME_column = {
         'hfo': 'ME_Consumption_HFO',
+        'vlsfo2020': 'ME_Consumption_HFO',  # Treat vlsfo2020 as HFO
         'lfo': 'ME_Consumption_LFO',
         'mgo': 'ME_Consumption_MGO',
+        'ulsmgo2020': 'ME_Consumption_MGO',  # Treat vlsfo2020 as MGO
         'mdo': 'ME_Consumption_MDO',
         'lng': 'ME_Consumption_LNG',
         'lpgp': 'ME_Consumption_LPGP',
@@ -114,8 +116,10 @@ def map_fuel_type_consumption(navfleet_data):
     }
     fuel_type_to_AE_column = {
         'hfo': 'AE_Consumption_HFO',
+        'vlsfo2020': 'AE_Consumption_HFO',  # Treat vlsfo2020 as HFO
         'lfo': 'AE_Consumption_LFO',
         'mgo': 'AE_Consumption_MGO',
+        'ulsmgo2020': 'ME_Consumption_MGO',  # Treat vlsfo2020 as MGO
         'mdo': 'AE_Consumption_MDO',
         'lng': 'AE_Consumption_LNG',
         'lpgp': 'AE_Consumption_LPGP',
@@ -125,8 +129,10 @@ def map_fuel_type_consumption(navfleet_data):
     }
     fuel_type_to_Boiler_column = {
         'hfo': 'Boiler_Consumption_HFO',
+        'vlsfo2020': 'Boiler_Consumption_HFO',  # Treat vlsfo2020 as HFO
         'lfo': 'Boiler_Consumption_LFO',
         'mgo': 'Boiler_Consumption_MGO',
+        'ulsmgo2020': 'ME_Consumption_MGOO',  # Treat vlsfo2020 as MGO
         'mdo': 'Boiler_Consumption_MDO',
         'lng': 'Boiler_Consumption_LNG',
         'lpgp': 'Boiler_Consumption_LPGP',
