@@ -119,7 +119,7 @@ def map_fuel_type_consumption(navfleet_data):
         'vlsfo2020': 'AE_Consumption_HFO',  # Treat vlsfo2020 as HFO
         'lfo': 'AE_Consumption_LFO',
         'mgo': 'AE_Consumption_MGO',
-        'ulsmgo2020': 'ME_Consumption_MGO',  # Treat vlsfo2020 as MGO
+        'ulsmgo2020': 'AE_Consumption_MGO',  # Treat vlsfo2020 as MGO
         'mdo': 'AE_Consumption_MDO',
         'lng': 'AE_Consumption_LNG',
         'lpgp': 'AE_Consumption_LPGP',
